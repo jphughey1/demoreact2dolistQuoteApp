@@ -1,0 +1,99 @@
+section {
+  background-size: cover;
+  min-height: 500px;
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.5em 1em;
+  background-color: grey;
+  border: 0 solid;
+  border-color: grey;
+  box-sizing: border-box;
+  width: 200px;
+  color: white;
+  border-radius: 1em;
+  position: absolute;
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+  transform: scale(1) rotate(0);
+  z-index: 1;
+}
+
+.card::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2em 2em 0 0;
+  border-color: transparent;
+  border-top-color: inherit;
+  position: absolute;
+  bottom: 0;
+  left: 2em;
+  transform: translateY(2em) scale(1.01);
+}
+
+.card:hover {
+  transform: scale(1.2);
+  z-index: 999;
+}
+
+.quote {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1em;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+.quote::before {
+  content: '\0022';
+  font-size: 3em;
+  line-height: 1;
+  vertical-align: middle;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+p.author {
+  display: inline-block;
+  align-self: flex-end;
+  margin: 0.5rem;
+  position: relative;
+  text-align: right;
+  padding: 0 1rem;
+}
+
+p.author::before {
+  content: '\02dc';
+  padding: 0.2rem 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2.2em;
+}
+
+.card.green {
+  background-color: rgba(27, 94, 32, 0.6);
+  border-color: rgba(27, 94, 32, 0.6);
+  top: 3em;
+  left: calc(30% - 2em);
+}
+
+.card.blue {
+  top: 2em;
+  left: 8em;
+  background-color: rgba(13, 71, 161, 0.6);
+  border-color: rgba(13, 71, 161, 0.6);
+}
+
+.card.yellow {
+  top: 0.3em;
+  left: calc(30% + 3em);
+  background-color: rgba(81, 255, 0, 0.911);
+  border-color: rgba(81, 255, 0, 0.911);
+}
